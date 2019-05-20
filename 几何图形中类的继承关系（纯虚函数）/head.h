@@ -5,18 +5,18 @@ class Geometric_shape
 {
 public:
 	virtual void show() {};
-	virtual double perimeter() = 0;              //¸ß¶È³éÏóÀà£¬ÎŞ·¨×Ô¼ºÊµÏÖÊµÀı»¯¡£³éÏóÀàÖĞµÄº¯ÊıÃ»ÓĞ¾ßÌåº¬Òå£¬Ëü´æÔÚµÄÒâÒå¾ÍÊÇ¸ø×ÓÀà£¨ÅÉÉúÀà£©½øĞĞÖØĞ´µÄ
-	//virtual double perimeter() { return 0; };  //ÇÒÖªµÀ **ËùÓĞ** ´¿Ğéº¯Êı±»ÖØĞ´Ö®Ç°£¬³éÏóÀàµÄ×ÓÀàÒ»Ö±±£³Ö³éÏó×´Ì¬
-												 //ÔÚC++ÖĞÕâ¸öÖªÊ¶µã½Ğ×ö´¿Ğéº¯Êı£¬ÔÚJavaÖĞ½Ğ×ö½Ó¿Ú
+	virtual double perimeter() = 0;              //é«˜åº¦æŠ½è±¡ç±»ï¼Œæ— æ³•è‡ªå·±å®ç°å®ä¾‹åŒ–ã€‚æŠ½è±¡ç±»ä¸­çš„å‡½æ•°æ²¡æœ‰å…·ä½“å«ä¹‰ï¼Œå®ƒå­˜åœ¨çš„æ„ä¹‰å°±æ˜¯ç»™å­ç±»ï¼ˆæ´¾ç”Ÿç±»ï¼‰è¿›è¡Œé‡å†™çš„
+	//virtual double perimeter() { return 0; };  //ä¸”çŸ¥é“ **æ‰€æœ‰** çº¯è™šå‡½æ•°è¢«é‡å†™ä¹‹å‰ï¼ŒæŠ½è±¡ç±»çš„å­ç±»ä¸€ç›´ä¿æŒæŠ½è±¡çŠ¶æ€
+						     //åœ¨C++ä¸­è¿™ä¸ªçŸ¥è¯†ç‚¹å«åšçº¯è™šå‡½æ•°ï¼Œåœ¨Javaä¸­å«åšæ¥å£
 	virtual double area() = 0;
-	virtual double volume() = 0;       //µ±½«volume±äÎª´¿Ğéº¯ÊıµÄÊ±ºò£¬ĞèÒªÔÚÒÔÏÂ¼Ì³Ğ¸Ã³éÏóÀàµÄÆ½ÃæÖĞ
+	virtual double volume() = 0;       //å½“å°†volumeå˜ä¸ºçº¯è™šå‡½æ•°çš„æ—¶å€™ï¼Œéœ€è¦åœ¨ä»¥ä¸‹ç»§æ‰¿è¯¥æŠ½è±¡ç±»çš„å¹³é¢ä¸­
 };
 
 class Circle :public Geometric_shape
 {
 public:
 	Circle(double r) :r(r) {};
-	virtual void show() { cout << "¹¹ÔìÒ»¸öÔ²"; };
+	virtual void show() { cout << "æ„é€ ä¸€ä¸ªåœ†"; };
 	virtual double perimeter();
 	virtual double area();
 	virtual double volume() { return 0; }
@@ -28,7 +28,7 @@ class Rectangle :public Geometric_shape
 {
 public:
 	Rectangle(double length, double width) :length(length), width(width) {};
-	virtual void show() { cout << "¹¹ÔìÒ»¸ö¾ØĞÎ"; };
+	virtual void show() { cout << "æ„é€ ä¸€ä¸ªçŸ©å½¢"; };
 	virtual double perimeter();
 	virtual double area();
 	virtual double volume() { return 0; }
@@ -40,7 +40,7 @@ class Triangle :public Geometric_shape
 {
 public:
 	Triangle(double a, double b, double c) :a(a), b(b), c(c) {};
-	virtual void show() { cout << "¹¹ÔìÒ»¸öÈı½ÇĞÎ"; };
+	virtual void show() { cout << "æ„é€ ä¸€ä¸ªä¸‰è§’å½¢"; };
 	virtual double perimeter();
 	virtual double area();
 	virtual double volume() { return 0; }
@@ -52,7 +52,7 @@ class Box :public Rectangle
 {
 public:
 	Box(double length, double width, double hight) :Rectangle(length, width), hight(hight) {};
-	virtual void show() { cout << "¹¹ÔìÒ»¸ö³¤·½Ìå"; };
+	virtual void show() { cout << "æ„é€ ä¸€ä¸ªé•¿æ–¹ä½“"; };
 	virtual double volume();
 private:
 	double length, width, hight;
@@ -62,7 +62,7 @@ class Cylinder :public Circle
 {
 public:
 	Cylinder(double r, double hight) :Circle(r), hight(hight) {};
-	virtual void show() { cout << "¹¹ÔìÒ»¸öÔ²Öù"; };
+	virtual void show() { cout << "æ„é€ ä¸€ä¸ªåœ†æŸ±"; };
 	virtual double volume();
 private:
 	double r, hight;
@@ -72,7 +72,7 @@ class Cone :public Circle
 {
 public:
 	Cone(int r, double hight) :Circle(r), hight(hight) {};
-	virtual void show() { cout << "¹¹ÔìÒ»¸öÔ²×¶"; };
+	virtual void show() { cout << "æ„é€ ä¸€ä¸ªåœ†é”¥"; };
 	virtual double volume();
 private:
 	double r, hight;
@@ -82,7 +82,7 @@ class T_pyramid :public Triangle
 {
 public:
 	T_pyramid(double a, double b, double c, double hight) :Triangle(a, b, c), hight(hight) {};
-	virtual void show() { cout << "¹¹ÔìÒ»¸öÈıÀâ×¶"; };
+	virtual void show() { cout << "æ„é€ ä¸€ä¸ªä¸‰æ£±é”¥"; };
 	virtual double volume();
 private:
 	double a, b, c, hight;
@@ -92,7 +92,7 @@ class T_prism :public Triangle
 {
 public:
 	T_prism(double a, double b, double c, double hight) :Triangle(a, b, c), hight(hight) {};
-	virtual void show() { cout << "¹¹ÔìÒ»¸öÈıÀâÖù"; };
+	virtual void show() { cout << "æ„é€ ä¸€ä¸ªä¸‰æ£±æŸ±"; };
 	virtual double volume();
 private:
 	double a, b, c, hight;
