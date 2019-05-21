@@ -1,7 +1,6 @@
-//#include<iostream>
+#include<iostream>
+using namespace std;
 #include"head.h"
-//using namespace std;
-
 Person::Person(const char name[],const char gender[])
 {
 	strncpy_s(this->name, name, sizeof(name));
