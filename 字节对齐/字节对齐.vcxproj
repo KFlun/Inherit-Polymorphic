@@ -23,7 +23,7 @@
     <ProjectGuid>{5525DA94-BC3A-41CD-B0A3-381BCBBC2F58}</ProjectGuid>
     <RootNamespace>字节对齐</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
-    <ProjectName>16-3</ProjectName>
+    <ProjectName>字符对齐</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
